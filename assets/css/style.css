@@ -1,0 +1,388 @@
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #f2f5f8;
+	color: #4b4b4b;
+}
+
+.main-container {
+    margin: 50px 10%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header h2 {
+    margin-right: auto;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #333333;
+}
+
+.add-button {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: white;
+    background-color: #4886ff;
+    height: 35px;
+	padding: 0px 17px;
+	border-radius: 30px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.add-button:hover {
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+.schedule {
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 2px 20px 2px rgba(0, 0, 0, 0.02);
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+.schedule-title, .train-row {
+    display: flex;
+    padding: 20px 4px;
+}
+
+.train-row {
+    position: relative;
+}
+
+.train-row:nth-child(odd) {
+    background-color: white;
+}
+
+.train-row:nth-child(even) {
+    background-color: #fafbfd;
+}
+
+.train-row:last-child {
+    border-radius: 0 0 20px 20px;
+}
+
+.fa-long-arrow-alt-right {
+    display: none;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.title, .train-item {
+    width: 23%;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.action {
+    width: 8%;
+}
+
+.train-cell {
+    font-weight: 600;
+}
+
+.destination-container span {
+    display: none;
+}
+
+.frequency-label, .arrival-label, .minutes-label {
+    display: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.action i {
+    margin: 0 10px;
+    font-size: 13px;
+}
+
+.action i:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    position: static;
+}
+
+.dropdown-menu {
+    border: 1px solid #ecedf1;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.dropdown-item {
+    font-size: 13px;
+    padding: 12px 10px;
+}
+
+.dropdown-item:first-child {
+	border-radius: 10px 10px 0 0; 
+}
+
+.dropdown-item:last-child {
+	border-radius: 0 0 10px 10px;
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
+}
+
+.dropdown-item:active {
+    background-color: #4886ff;
+}
+
+.modal-title {
+	text-align: center;
+	font-weight: 600;
+	margin-top: 0;
+}
+
+.train-form {
+    padding: 0px 15px 10px;
+    margin-bottom: 0px;
+}
+
+.train-form label {
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.train-form input[type=text],
+.train-form input[type=number] {
+	background-color: #f5f5f5;
+	border: 1px solid transparent;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 0 12px;
+	height: 35px;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.train-form input[type=text]::placeholder,
+.train-form input[type=number]::placeholder {
+	font-weight: 600;
+	color: #878686;
+	font-size: 12px;
+}
+
+.train-form input[type=text]:active,
+.train-form input[type=text]:focus,
+.train-form input[type=number]:active,
+.train-form input[type=number]:focus,
+.submit-form:active,
+.submit-form:focus {
+	outline: none;
+}
+
+.submit-form {
+	margin: 5px 15px;
+	width: calc(100% - 30px);
+	background-color: #4886ff;
+	color: white;
+	border: 1px solid transparent;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	padding: 7px;
+	border-radius: 20px;
+}
+
+.submit-form:hover {
+	cursor: pointer;
+}
+
+.submit-form:hover {
+	opacity: 0.9;
+}
+
+.modal-header {
+	padding: 20px;
+}
+
+.modal-header .close {
+	position: absolute;
+	right: 0;
+	padding: 0!important;
+	margin: -5px 15px;
+	font-size: 15px;
+}
+
+.modal-header .close:active, .modal-header .close:focus {
+	outline: none;
+}
+
+.modal-title {
+	margin: auto;
+	font-size: 25px;
+}
+
+.modal-content {
+	border: 0px solid transparent;
+	border-radius: 10px;
+}
+
+.modal-body {
+	padding-bottom: 25px;
+}
+
+@media screen and (max-width: 935px) {
+    .main-container {
+        margin: 50px 4%;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .main-container {
+        margin: 50px 40px;
+    }
+    .add-button {
+        font-size: 13px;
+    }
+    .schedule {
+        background-color: transparent;
+        margin-top: 35px;
+    }
+    .schedule-title {
+        display: none;
+    }
+    .train-row {
+        flex-wrap: wrap;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    .train-row:last-child {
+        border-radius: 20px;
+    }
+    .train-row:nth-child(even) {
+        background-color: white;
+    }
+    .train-item {
+        width: 33.333333%;
+    }
+    .train-cell, .destination-container {
+        width: 100%;
+    }
+    .train-cell {
+        font-size: 25px;
+    }
+    .fa-long-arrow-alt-right {
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 15px;
+    }
+    .destination-container {
+        font-size: 17px;
+        margin-top: -2px;
+        margin-bottom: 10px;
+    }
+    .destination-container span {
+        display: inline-block;
+    }
+    .destination-cell {
+        display: inline-block;
+    }
+    .frequency-label, .arrival-label, .minutes-label {
+        display: block;
+        font-size: 13px;
+    }
+    .frequency-cell, .arrival-cell, .minutes-cell {
+    	font-size: 20px;
+        font-weight: 600;
+        margin-top: -5px;
+    }
+    .action {
+        position: absolute;
+        top: 21px;
+        right: 10px;
+    }
+    .action i {
+        font-size: 20px;
+    }
+    .dropdown-item {
+        font-size: 14px;
+    }
+    .dropdown-item i {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 533px) {
+    .main-container {
+        margin: 50px 5%;
+    }
+    .train-cell {
+        font-size: 20px;
+    }
+    .destination-container {
+        font-size: 14px;
+    }
+    .fa-long-arrow-alt-right {
+        font-size: 13px;
+        margin: 0 13px;
+    }
+    .frequency-label, .arrival-label, .minutes-label {
+        font-size: 11px;
+    }
+    .frequency-cell, .arrival-cell, .minutes-cell {
+    	font-size: 15px;
+        margin-top: -1px;
+    }
+    .action {
+        top: 24px;
+    }
+    .action i {
+        font-size: 16px;
+    }
+    .train-form {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 449px) {
+    .header h2 {
+        font-size: 27px;
+    }
+    .add-button {
+        font-size: 12px;
+        padding: 0px 13px;
+    }
+    .train-cell {
+        font-size: 19px;
+    }
+    .destination-container {
+        font-size: 13px;
+        margin-top: -1px;
+        margin-bottom: 6px;
+    }
+    .frequency-label, .arrival-label, .minutes-label {
+        font-size: 10px;
+    }
+    .frequency-cell, .arrival-cell, .minutes-cell {
+    	font-size: 13px;
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .header h2 {
+        font-size: 23px;
+    }
+    .add-button {
+        font-size: 10px;
+    }
+}

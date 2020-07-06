@@ -12,51 +12,55 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var database = firebase.database();
+var trainSchedule = firebase.database();
 
-// Grabs user input
-var trainName = $("#train-name-input")
-  .val()
-  .trim();
-var destination = $("#destination-input")
-  .val()
-  .trim();
-var firstTrain = $("#first-train-input")
-  .val()
-  .trim();
-var frequency = $("#frequency-input")
-  .val()
-  .trim();
+$("#add-train-btn").on("click", function (event) {
+  // Prevent the default form submit behavior
+  event.preventDefault();
 
-// Creates local "temporary" object for holding train data
-var newTrain = {
-  name: trainName,
-  destination: destination,
-  firstTrain: firstTrain,
-  frequency: frequency
-};
+  // Grabs user input
+  var trainName = $("#train-name-input")
+    .val()
+    .trim();
+  var destination = $("#destination-input")
+    .val()
+    .trim();
+  var firstTrain = $("#first-train-input")
+    .val()
+    .trim();
+  var frequency = $("#frequency-input")
+    .val()
+    .trim();
 
-// Uploads train data to the database
-trainData.ref().push(newTrain);
+  // Creates local "temporary" object for holding train data
+  var newTrain = {
+    name: trainName,
+    destination: destination,
+    firstTrain: firstTrain,
+    frequency: frequency
+  };
 
-// Logs everything to console
-console.log(newTrain.name);
-console.log(newTrain.destination);
-console.log(newTrain.firstTrain);
-console.log(newTrain.frequency);
+  // Uploads train data to the database
+  trainSchedule.ref().push(newTrain);
 
-// Alert
-alert("Train successfully added");
+  // Logs everything to console
+  console.log(newTrain.name);
+  console.log(newTrain.destination);
+  console.log(newTrain.firstTrain);
+  console.log(newTrain.frequency);
 
-// Clears all of the text-boxes
-$("#train-name-input").val("");
-$("#destination-input").val("");
-$("#first-train-input").val("");
-$("#frequency-input").val("");
+  // Alert
+  alert("Your Train has been added. Thank you");
+
+  // Clears all of the text-boxes
+  $("#train-name-input").val("");
+  $("#destination-input").val("");
+  $("#first-train-input").val("");
+  $("#frequency-input").val("");
 });
 
 // 4. Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
-trainData.ref().on("child_added", function (childSnapshot, prevChildKey) {
+trainSchedule.ref().on("child_added", function (childSnapshot, prevChildKey) {
   console.log(childSnapshot.val());
 
   // Store everything into a variable.
